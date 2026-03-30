@@ -1,0 +1,351 @@
+:root {
+  --kakao-yellow: #FEE500;
+  --kakao-yellow-dark: #F0D900;
+  --kakao-brown: #3C1E1E;
+  --bg: #f5f5f5;
+  --card-bg: #ffffff;
+  --text-primary: #191919;
+  --text-secondary: #666666;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* ── 공통 헤더 ── */
+.header {
+  background: var(--kakao-yellow);
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 1.2rem;
+  color: var(--kakao-brown);
+  font-weight: 700;
+}
+
+/* ── index.html ── */
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.prank-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.prank-emoji {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.prank-card h2 {
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.description {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ── 메시지 미리보기 ── */
+.message-preview {
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.preview-label {
+  background: #f9f9f9;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.preview-card {
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.preview-image-placeholder {
+  font-size: 2.5rem;
+  text-align: center;
+  background: #fff8d0;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.preview-content strong {
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.preview-content p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.preview-btn {
+  background: var(--kakao-yellow);
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--kakao-brown);
+  cursor: default;
+  width: 100%;
+}
+
+/* ── 앱 키 입력 ── */
+.config-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.config-section label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.config-section input {
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.config-section input:focus {
+  border-color: var(--kakao-yellow-dark);
+}
+
+/* ── 공유 버튼 ── */
+.kakao-share-btn {
+  background: var(--kakao-yellow);
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--kakao-brown);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.15s, transform 0.1s;
+  width: 100%;
+}
+
+.kakao-share-btn:hover {
+  background: var(--kakao-yellow-dark);
+}
+
+.kakao-share-btn:active {
+  transform: scale(0.97);
+}
+
+.kakao-icon {
+  font-size: 1.2rem;
+}
+
+.disclaimer {
+  font-size: 0.75rem;
+  color: #aaa;
+  text-align: center;
+}
+
+/* ── gotcha.html ── */
+body.gotcha-page {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.fake-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: #fff;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--kakao-yellow);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.fake-loading p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.reveal-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.gotcha-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: revealCard 0.5s ease forwards;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@keyframes revealCard {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.gotcha-emoji {
+  font-size: 4rem;
+}
+
+.gotcha-card h1 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+}
+
+.gotcha-card h2 {
+  font-size: 1.3rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.gotcha-message {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.gotcha-message strong {
+  color: var(--text-primary);
+}
+
+.sender-info {
+  background: #fff8d0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  color: var(--kakao-brown);
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.revenge-btn {
+  background: var(--kakao-yellow);
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--kakao-brown);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  animation: wiggle 2s ease-in-out 1s infinite;
+}
+
+.revenge-btn:hover {
+  background: var(--kakao-yellow-dark);
+  animation: none;
+}
+
+.revenge-btn:active {
+  transform: scale(0.97);
+}
+
+@keyframes wiggle {
+  0%, 90%, 100% { transform: rotate(0deg); }
+  92% { transform: rotate(-3deg); }
+  96% { transform: rotate(3deg); }
+}
+
+.close-btn {
+  background: transparent;
+  border: 1.5px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.close-btn:hover {
+  border-color: #aaa;
+}
+
+/* ── 콘페티 캔버스 ── */
+#confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}

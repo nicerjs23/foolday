@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>만우절 장난 보내기</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js"
+    integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4"
+    crossorigin="anonymous"></script>
+  <script src="env.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <h1>💬 만우절 장난 보내기</h1>
+  </header>
+
+  <main class="container">
+    <div class="prank-card">
+
+      <div class="prank-emoji">💸</div>
+      <h2>친구에게 낚시 메시지 보내기</h2>
+      <p class="description">
+        카카오페이로 100만원 송금 알림처럼 생긴 메시지를 보내<br />
+        친구를 깜짝 놀라게 해보세요!
+      </p>
+
+      <!-- 메시지 미리보기 -->
+      <div class="message-preview">
+        <div class="preview-label">친구에게 보여질 메시지 미리보기</div>
+        <div class="preview-card">
+          <div class="preview-image-placeholder">💰</div>
+          <div class="preview-content">
+            <strong>💸 친구가 나에게 1,000,000원을 보냈어요!</strong>
+            <p>카카오페이 머니가 도착했습니다. 지금 바로 확인하세요.</p>
+          </div>
+          <div class="preview-btn">받기 💰</div>
+        </div>
+      </div>
+
+      <!-- 공유 버튼 -->
+      <button class="kakao-share-btn" onclick="sendKakaoShare()">
+        <span class="kakao-icon">💬</span>
+        카카오톡으로 공유하기
+      </button>
+
+      <p class="disclaimer">* 4월 1일 만우절 장난용입니다. 악용하지 마세요!</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
