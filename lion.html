@@ -1,58 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- 카카오톡 링크 미리보기용 OG 태그 (낚시 내용) -->
-  <meta property="og:title" content="💸 친구가 나에게 1,000,000원을 보냈어요!" />
-  <meta property="og:description" content="카카오페이 머니가 도착했습니다. 지금 바로 확인하세요." />
-  <meta property="og:image" content="https://t1.kakaocdn.net/kakaopay/static/images/kakaopay_og.png" />
+    <!-- 카카오톡 링크 미리보기용 OG 태그 (낚시 내용) -->
+    <meta
+      property="og:title"
+      content="💸 친구가 나에게 1,000,000원을 보냈어요!"
+    />
+    <meta
+      property="og:description"
+      content="카카오페이 머니가 도착했습니다. 지금 바로 확인하세요."
+    />
+    <meta
+      property="og:image"
+      content="https://t1.kakaocdn.net/kakaopay/static/images/kakaopay_og.png"
+    />
 
-  <title>카카오페이 머니 도착</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body class="gotcha-page">
-
-  <!-- 가짜 로딩 화면 -->
-  <div id="fake-loading" class="fake-loading">
-    <div class="loading-spinner"></div>
-    <p>송금 정보를 불러오는 중...</p>
-  </div>
-
-  <!-- 낚시 reveal 카드 -->
-  <div id="reveal" class="reveal-container hidden">
-    <div class="gotcha-card">
-
-      <div class="gotcha-emoji">😂</div>
-      <h1>만우절이에요~</h1>
-      <h2>속으셨죠? 😆</h2>
-
-      <p class="gotcha-message">
-        100만원 같은 건 없어요!<br />
-        <strong>4월 1일 만우절</strong>을 축하합니다 🎉
-      </p>
-
-      <!-- 발신자 이름 표시 (?from=이름 파라미터 있을 때) -->
-      <div class="sender-info" id="senderInfo" style="display:none;">
-        <p><span id="senderName">누군가</span>가 보낸 장난이에요!</p>
-      </div>
-
-      <div class="action-buttons">
-        <button class="revenge-btn" onclick="goToShare()">
-          😈 나도 친구한테 장난 보내기
-        </button>
-        <button class="close-btn" onclick="window.close()">
-          닫기
-        </button>
-      </div>
-
+    <title>카카오페이 머니 도착</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="gotcha-page">
+    <!-- 가짜 로딩 화면 -->
+    <div id="fake-loading" class="fake-loading">
+      <div class="loading-spinner"></div>
+      <p>과제 패스권 생성하는 중...</p>
     </div>
-  </div>
 
-  <!-- 콘페티 캔버스 -->
-  <canvas id="confettiCanvas"></canvas>
+    <!-- 낚시 reveal 카드 -->
+    <div id="reveal" class="reveal-container hidden">
+      <div class="gotcha-card">
+        <img
+          src="skrr.webp"
+          alt="skrr"
+          style="width: 100%; border-radius: 12px"
+        />
 
-  <script src="script.js"></script>
-</body>
+        <h1>만우절이지롱~</h1>
+        <p class="gotcha-message">
+          과제 패스권은 사실 없습니다..<br />
+          다들 세션 파이팅 🔥 <br />- 멋사 대장 강근우 -
+        </p>
+      </div>
+    </div>
+
+    <!-- 콘페티 캔버스 -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="script.js"></script>
+  </body>
 </html>

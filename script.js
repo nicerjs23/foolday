@@ -31,13 +31,9 @@ function sendKakaoShare() {
   const appKey = CONFIG.KAKAO_APP_KEY;
 
   if (!appKey) {
-    alert('env.js에 KAKAO_APP_KEY가 설정되지 않았습니다.\nenv.example.js를 복사해 env.js를 만들고 키를 입력해주세요.');
-    return;
-  }
-
-  const gotchaUrl = CONFIG.GOTCHA_URL;
-  if (!gotchaUrl) {
-    alert('env.js에 GOTCHA_URL이 설정되지 않았습니다.\n배포 후 lion.html의 전체 URL을 입력해주세요.');
+    alert(
+      'env.js에 KAKAO_APP_KEY가 설정되지 않았습니다.\nenv.example.js를 복사해 env.js를 만들고 키를 입력해주세요.',
+    );
     return;
   }
 
@@ -46,27 +42,8 @@ function sendKakaoShare() {
     return;
   }
 
-  Kakao.Share.sendDefault({
-    objectType: 'feed',
-    content: {
-      title: CONFIG.PRANK_TITLE,
-      description: CONFIG.PRANK_DESC,
-      imageUrl: CONFIG.PRANK_IMAGE,
-      link: {
-        webUrl: gotchaUrl,
-        mobileWebUrl: gotchaUrl,
-      },
-    },
-    buttons: [
-      {
-        title: '받기 💰',
-        link: {
-          webUrl: gotchaUrl,
-          mobileWebUrl: gotchaUrl,
-        },
-      },
-    ],
-    installTalk: true,
+  Kakao.Share.sendCustom({
+    templateId: 131217,
   });
 }
 
@@ -95,7 +72,7 @@ function initGotchaPage() {
       reveal.classList.remove('hidden');
       startConfetti();
     }
-  }, 2500);
+  }, 1500);
 }
 
 // ========================================
@@ -109,7 +86,15 @@ function startConfetti() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  const colors = ['#FEE500', '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD'];
+  const colors = [
+    '#FEE500',
+    '#FF6B6B',
+    '#4ECDC4',
+    '#45B7D1',
+    '#96CEB4',
+    '#FFEAA7',
+    '#DDA0DD',
+  ];
 
   const particles = Array.from({ length: 120 }, () => ({
     x: Math.random() * canvas.width,
@@ -129,7 +114,7 @@ function startConfetti() {
     if (!running) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    particles.forEach(p => {
+    particles.forEach((p) => {
       ctx.save();
       ctx.translate(p.x, p.y);
       ctx.rotate(p.rotation);
@@ -162,7 +147,10 @@ function startConfetti() {
   draw();
 
   // 5초 후 콘페티 중단
-  setTimeout(() => { running = false; ctx.clearRect(0, 0, canvas.width, canvas.height); }, 5000);
+  setTimeout(() => {
+    running = false;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }, 5000);
 
   window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
